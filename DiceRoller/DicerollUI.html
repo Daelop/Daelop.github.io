@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head >
+        <link rel="stylesheet" href="DicerollUI.css">
+        <title>Dice Rolling App</title>
+        <script src="diceRoll.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A simple dice rolling application">
+        <meta name="keywords" content="dice, dnd, dungeons and dragons, dice roller, dice simulator, d&d">
+        <meta name="author" content="Daelop">
+    </head>
+    <body>
+    <h1 class="bordered">Dice Roller</h1>
+    <nav>
+        <button onclick="window.location.href='../index.html'">Home</button>
+        <button onclick="window.location.href='\DicerollUI.html'">Dice Roller</button>
+        <button onclick="window.location.href='\presets_weapons.html'">5e Weapons Roller</a>
+        
+    </nav>
+    <br>
+    <form class="bordered">
+    <label for="diceType">What type of dice would you like to roll?</label>
+    <br>
+    <select class="box" id="diceType" name="diceType">
+        <option value="4">D4</option>
+        <option value="6">D6</option>
+        <option value="8">D8</option>
+        <option value="10">D10</option>
+        <option value="12">D12</option>
+        <option value="20">D20</option>
+        <option value="100">D100</option>
+    </select>
+<br>
+<br>
+<label for="diceNum">How many dice would you like to roll?</label>
+<br>
+<input class="box" type="number" id="diceNum" name="diceNum" value="1" min="1">
+<br>
+<br>
+<button type="button" id="rollSubmit" onclick="rollDice(document.getElementById('diceType').value, document.getElementById('diceNum').value)">Roll!</button>
+</form>
+<br>
+<p id="output" class="bordered"></p>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+body{
+    background-image: url('dice_BKGD.jpg');
+    background-size: 10%;
+    max-width: min-content;
+    color: #54414E;
+    font-family: fantasy;
+    font-weight: 100;
+    margin:auto ;
+    min-width: max-content;
+}
+h1{
+    letter-spacing: 2px;
+    text-decoration: underline;
+    text-align: center;
+}
+.box {
+    background-color: #d5e6d3;
+    border-style: groove;
+    border-width:2px;
+}
+.bordered{
+    border-radius: 10px;
+    border-style:  groove;
+    border-width:3px;
+    border-color: #54414E;
+    padding: 10px;
+    background-color: #C5EBC3;
+}
+button{
+    background-color: #A790A5;
+}
+button:hover {
+    background-color: #875C74;
+
+}
+#output{
+    word-wrap: break-word;
+    max-width: 260px;
+}
+nav{
+    text-align: center;
+    border-style:  groove;
+    border-width:3px;
+    border-color: #54414E;
+    padding: 2px;
+    background-color: #C5EBC3;
+}

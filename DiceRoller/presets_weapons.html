@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head >
+        <link rel="stylesheet" href="DicerollUI.css">
+        <title>Dice Rolling App</title>
+        <script src="diceRoll.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="D&D 5e Weapons Roller">
+        <meta name="keywords" content="dice, dnd, dungeons and dragons, dice roller, dice simulator, d&d">
+        <meta name="author" content="Daelop">
+    </head>
+    <body>
+    <h1 class="bordered">Preset Dice Roller</h1>
+    <nav>
+        <button onclick="window.location.href='../index.html'">Home</button>
+        <button onclick="window.location.href='\DicerollUI.html'">Dice Roller</button>
+        <button onclick="window.location.href='\presets_weapons.html'">5e Weapons Roller</a>
+    </nav>
+    <br/>
+    <form class="bordered">
+    <label for="weaponType">Which weapon are you rolling for?</label>
+    <br>
+    <select class="box" id="weaponType" name="weaponType">
+        <option value="simpleweapons" disabled="true">- Simple Melee Weapons</option>
+        <option value="club">Club</option>
+        <option value="dagger">Dagger</option>
+        <option value="greatclub">Greatclub</option>
+        <option value="handaxe">Handaxe</option>
+        <option value="javelin">Javelin</option>
+        <option value="lighthammer">Light Hammer</option>
+        <option value="mace">Mace</option>
+        <option value="quarterstaff">Quarterstaff</option>
+        <option value="sickle">Sickle</option>
+        <option value="spear">Spear</option>
+
+        <option value="simpleranged" disabled="true">- Simple Ranged Weapons</option>
+        <option value="lightcrossbow">Light Crossbow</option>
+        <option value="dart">Dart</option>
+        <option value="shortbow">Shortbow</option>
+        <option value="sling">Sling</option>
+        
+        <option value="martialmelee" disabled="true">- Martial Melee Weapons</option>
+        <option value="battleaxe">Battleaxe</option>
+        <option value="flail">Flail</option>
+        <option value="glaive">Glaive</option>
+        <option value="greataxe">Greataxe</option>
+        <option value="greatsword">Greatsword</option>
+        <option value="halberd">Halberd</option>
+        <option value="lance">Lance</option>
+        <option value="longsword">Longsword</option>
+        <option value="maul">Maul</option>
+        <option value="morningstar">Morningstar</option>
+        <option value="pike">Pike</option>
+        <option value="rapier">Rapier</option>
+        <option value="scimitar">Scimitar</option>
+        <option value="shortsword">Shortsword</option>
+        <option value="trident">Trident</option>
+        <option value="warpick">War pick</option>
+        <option value="warhammer">Warhammer</option>
+        <option value="whip">Whip</option>
+
+        <option value="martialranged" disabled="true">- Martial Ranged Weapons</option>
+        
+        <option value="handcrossbow">Hand Crossbow</option>
+        <option value="heavycrossbow">Heavy Crossbow</option>
+        <option value="longbow">Longbow</option>
+        
+    </select>
+<br>
+<br>
+<button type="button" onclick="rollWeapon()">Roll!</button>
+</form>
+<br>
+<p id="output" class="bordered"></p>
+    </body>
+</html>
