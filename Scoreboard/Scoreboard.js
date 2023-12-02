@@ -18,7 +18,8 @@ function newPlayer(name) {
    
     const buttons = document.getElementsByClassName("score-button")
     for (let item of buttons){
-      item.className = pCount;
+      item.classList.add(pCount);
+      item.classList.remove("score-button");
       console.log(item.textContent + "modifed")
     };
     pCount += 1;
