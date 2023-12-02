@@ -25,7 +25,7 @@ function newPlayer(name) {
     let node = document.createElement("div");
     newPlayer.parentNode.appendChild(node);
     node.className = "scorebox";
-    node.id = pID;
+    node.id = "player"+ pCount;
 }
 function addScore(player, amount) {
   pScore[player] += amount;
