@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <form>
+            <input type="text" id="playerName" placeholder="New Player">
+            <button type="button" onclick="newPlayer(document.getElementById('playerName').value)">Add Player</button>
+        </form>
+        <div id="player0" class="scoreBox"></div>
+        <section style="display: none;">
+        <div id="template">
+        <button class="score-button" onClick="addScore(this.getAttribute('class'),5)" >+5</button>
+        <button class="score-button" onClick="addScore(this.getAttribute('class'),2)" >+2</button>
+        <button class="score-button" onClick="addScore(this.getAttribute('class'),1)" >+1</button>
+        <button class="score-button" onClick="removeScore(this.getAttribute('class'),1)" >-1</button>
+        <button class="score-button" onClick="removeScore(this.getAttribute('class'),2)" >-2</button>
+        <button class="score-button" onClick="removeScore(this.getAttribute('class'),5)" >-5</button>
+
+        </div>
+        </section>
+        <script src="/Scoreboard/Scoreboard.js" async defer></script>
+        </body>
+</html>
