@@ -18,8 +18,8 @@ function newPlayer(name) {
     (pCount + 1) +
     ">";
     const buttons = document.getElementsByClassName("score-button")
-    for (let button of buttons){
-      button.className = pCount;
+    for (let item of buttons){
+      item.className = pCount;
     };
     pCount += 1;
 }
