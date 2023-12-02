@@ -6,20 +6,23 @@ function newPlayer(name) {
   pIndex.push(pID);
   pScore.push(pCount);
   const scoreButtons = document.getElementById("template").innerHTML;
-  document.getElementById(pID).innerHTML =
+  let newPlayer = document.getElementById(pID);
+  newPlayer.innerHTML =
     "<p>" +
     name +
     "</p>" +
     scoreButtons +
     "<p id=score" +
     pCount +
-    ">0</p>" +
-    "</div><div class=scoreBox id=player" +
-    (pCount + 1) +
-    ">";
+    ">0</p>";
+    let node = document.createElement("div");
+    newPlayer.parentNode.appendChild(node);
+    node.className = "scorebox";
+    node.id = pID;
     const buttons = document.getElementsByClassName("score-button")
     for (let item of buttons){
       item.className = pCount;
+      console.log(item.textContent + "modifed")
     };
     pCount += 1;
 }
