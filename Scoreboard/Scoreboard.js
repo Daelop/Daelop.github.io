@@ -16,12 +16,15 @@ function newPlayer(name) {
     pCount +
     ">0</p>";
    
-    const buttons = document.getElementsByClassName("score-button")
-    for (let item of buttons){
+    let buttons = document.getElementsByClassName("score-button")
+    for (const item of buttons){
       item.classList.add(pCount);
+      console.log(item.textContent+"class added")
+    }
+  for (const item of buttons){
       item.classList.remove("score-button");
-      console.log(item.textContent + "modifed")
-    };
+      console.log(item.textContent+"class removed")
+   };
     pCount += 1;
     let node = document.createElement("div");
     newPlayer.parentNode.appendChild(node);
