@@ -15,16 +15,17 @@ function newPlayer(name) {
     "<p id=score" +
     pCount +
     ">0</p>";
-    let node = document.createElement("div");
-    newPlayer.parentNode.appendChild(node);
-    node.className = "scorebox";
-    node.id = pID;
+   
     const buttons = document.getElementsByClassName("score-button")
     for (let item of buttons){
       item.className = pCount;
       console.log(item.textContent + "modifed")
     };
     pCount += 1;
+    let node = document.createElement("div");
+    newPlayer.parentNode.appendChild(node);
+    node.className = "scorebox";
+    node.id = pID;
 }
 function addScore(player, amount) {
   pScore[player] += amount;
