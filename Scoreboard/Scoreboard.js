@@ -7,7 +7,7 @@ let areas = "'header header' 'player0 scoreBar0' ";
 function newPlayer(name) {
   let pID = "player" + pCount;
   pStrikes.push(0);
-  pScore.push(pCount);
+  pScore.push(0);
   const scoreButtons = document.getElementById("template").innerHTML;
   let newPlayer = document.getElementById(pID);
   newPlayer.innerHTML =
@@ -19,12 +19,8 @@ function newPlayer(name) {
     pCount +
     ">Score: 0</p><p class='strikes' id=strikes" +
     pCount +
-    "></p><div class='scoreBar' id=scoreBar" +
-    pCount +
-    " style='grid-area:scoreBar" +
-    pCount +
-    "; width:10px'></div>";
-  areas += "'player" + (pCount+1) + " scoreBar" + (pCount+1) + "'";
+    "></p>"
+  areas += "'player"+pCount+" scoreBar"+pCount+"' "
   let body = document.getElementById("grid");
   body.style.grid = areas;
   let buttons = document.getElementById(pID).getElementsByTagName("button");
@@ -36,6 +32,7 @@ function newPlayer(name) {
     item.classList.remove("score-button");
     console.log(item.textContent + "class removed");
   }
+  // playerBar(pCount)
   pCount += 1;
   let node = document.createElement("div");
   newPlayer.parentNode.appendChild(node);
@@ -47,25 +44,17 @@ function addScore(player, amount) {
   pScore[player] += amount;
   document.getElementById("score" + player).innerHTML =
     "Score: " + pScore[player];
-  // playerBar(player);
+    let scoreLength = Math.floor(100*(pScore[player]/scoreMax))+'%';
+  document.getElementById('scoreBar'+player).style.width = scoreLength;
 }
 function playerBar(player){
-  let scoreLength = Math.floor((pScore[player] / scoreMax) * 100) + '%';
-  if (getElementById('scoreBar'+player) = null){
-   let scoreBar = document.createElement("div") 
-   scoreBar.className= 'scoreBar';
-   scoreBar.id= 'scoreBar' + player;
-   scoreBar.style.gridArea= scoreBar + player;
-   scoreBar.style.width = scoreLength
-  }else
-  {
-    let scoreBar = getElementById('scoreBar'+player);
-    scoreBar.style.width = scoreLength
-
-  }
-  
-  
-  
+  let bar = document.getElementById('scoreBar0')
+ 
+  let node2 = document.createElement("div");
+  //bar.parentNode.appendChild(node2); 
+  player +=1;
+  node2.id = "scoreBar" + player;
+  node2.className = "scoreBar";
 }
 function strike(player, change) {
   pStrikes[player] += change;
