@@ -1,0 +1,68 @@
+body{
+    display: grid;
+    grid-template-columns: subgrid 4fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'header header' 'player0 scoreBar0';
+    background-color: rgb(30,30,30);
+    align-items:space-between;
+  
+}
+.scoreBox{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'name name name' 'pos pos pos' 'neg neg neg' 'strike strike strike' 'strikes strikes strikes';
+    border-radius: 10px;
+    border: 5px solid black;
+    padding: 10px;
+    background-color:   rgba(200,50,50,0.8);
+    margin: 2px;
+   width:150px;
+   max-height: 150px;
+   row-gap: 5px;
+    
+}
+.scoreBox p{
+    background-color:   rgba(180,30,30,0.8);
+    border:2px solid black;
+    max-width: max-content;
+    padding:3px;
+    margin:2px
+}
+.strikes.strikes{
+    grid-area:strikes;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: red;
+    border:none;
+    margin:0px
+}
+header{
+    grid-area:header;
+    background-color: gold;
+    padding:4px;
+    border: 5px solid black;
+}
+.scoreBox button{
+    display: inline-block;
+    height: 15px;
+    font-size: 10px;
+}
+.positiveScore{
+    grid-area: pos;   
+    margin:0px
+}
+.negativeScore{
+    grid-area: neg;
+   margin: 0px;
+}
+.strike-buttons{
+    grid-area: strike;
+    margin: 0px;
+}
+.scoreBar{
+    grid-area: scoreBar;
+    height:10px;
+    width: 2px;
+    background-color: brown;
+}
