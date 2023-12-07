@@ -9,6 +9,7 @@ function newPlayer(name) {
   pStrikes.push(0);
   pScore.push(0);
   const scoreButtons = document.getElementById("template").innerHTML;
+  //Creates HTML elements for each new player
   let newPlayer = document.getElementById(pID);
   newPlayer.innerHTML =
     "<p>" +
@@ -20,17 +21,20 @@ function newPlayer(name) {
     ">Score: 0</p><p class='strikes' id=strikes" +
     pCount +
     "></p>"
+  newPlayer.hidden = false;
+  document.getElementById("scoreBar"+pCount).hidden=false
+  //modifies the CSS grid to include the next score box and score bar
   areas += "'player"+(pCount+1)+" scoreBar"+(pCount+1)+"' "
   let body = document.getElementById("grid");
   body.style.gridTemplateAreas = areas;
+
+  //sets the class of the buttons to match the player index
   let buttons = document.getElementById(pID).getElementsByTagName("button");
   for (let item of buttons) {
     item.classList.add(pCount);
-    console.log(item.textContent + "class added");
   }
   for (let item of buttons) {
     item.classList.remove("score-button");
-    console.log(item.textContent + "class removed");
   }
   
   pCount += 1;
@@ -39,15 +43,19 @@ function newPlayer(name) {
   node.className = "scoreBox";
   node.id = "player" + pCount;
   node.style.gridArea = "player" + pCount;
+  node.hidden=true
   playerBar(pCount)
 }
+
+//Modifies player scores
 function addScore(player, amount) {
   pScore[player] += amount;
   document.getElementById("score" + player).innerHTML =
     "Score: " + pScore[player];
-    let scoreLength = Math.floor(100*(pScore[player]/scoreMax))+'%';
+    let scoreLength = Math.floor(95*(pScore[player]/scoreMax))+'%';
   document.getElementById('scoreBar'+player).style.width = scoreLength;
 }
+//Creates bars to represent player scores
 function playerBar(player){
   let bar = document.getElementById('scoreBar0')
   let node2 = document.createElement("div");
@@ -55,7 +63,10 @@ function playerBar(player){
   node2.id = "scoreBar" + player;
   node2.className = "scoreBar";
   node2.gridArea = "scoreBar" + player;
+  node2.hidden=true;
 }
+
+//Adds or removes strikes from the player=
 function strike(player, change) {
   pStrikes[player] += change;
   let strikesMax = document.getElementById("maxStrikes").value;
@@ -85,14 +96,14 @@ function strike(player, change) {
       document.getElementById("strikes" + player).innerHTML = strikeString;
     }
   }
-  console.log(pStrikes[player]);
 }
+
+//Toggles visibility of the settings
 function toggleSettings() {
   if (document.getElementById("settingsWindow").hidden) {
     document.getElementById("settingsWindow").hidden = false;
     console.log("unhidden");
   } else {
     document.getElementById("settingsWindow").hidden = true;
-    console.log("hidden");
   }
 }
