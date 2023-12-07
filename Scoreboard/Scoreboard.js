@@ -20,9 +20,9 @@ function newPlayer(name) {
     ">Score: 0</p><p class='strikes' id=strikes" +
     pCount +
     "></p>"
-  areas += "'player"+pCount+" scoreBar"+pCount+"' "
+  areas += "'player"+(pCount+1)+" scoreBar"+(pCount+1)+"' "
   let body = document.getElementById("grid");
-  body.style.grid = areas;
+  body.style.gridTemplateAreas = areas;
   let buttons = document.getElementById(pID).getElementsByTagName("button");
   for (let item of buttons) {
     item.classList.add(pCount);
@@ -32,13 +32,14 @@ function newPlayer(name) {
     item.classList.remove("score-button");
     console.log(item.textContent + "class removed");
   }
-  // playerBar(pCount)
+  
   pCount += 1;
   let node = document.createElement("div");
   newPlayer.parentNode.appendChild(node);
   node.className = "scoreBox";
   node.id = "player" + pCount;
   node.style.gridArea = "player" + pCount;
+  playerBar(pCount)
 }
 function addScore(player, amount) {
   pScore[player] += amount;
@@ -49,12 +50,11 @@ function addScore(player, amount) {
 }
 function playerBar(player){
   let bar = document.getElementById('scoreBar0')
- 
   let node2 = document.createElement("div");
-  //bar.parentNode.appendChild(node2); 
-  player +=1;
+  bar.parentNode.appendChild(node2); 
   node2.id = "scoreBar" + player;
   node2.className = "scoreBar";
+  node2.gridArea = "scoreBar" + player;
 }
 function strike(player, change) {
   pStrikes[player] += change;

@@ -1,10 +1,10 @@
 body{
     display: grid;
-    grid-template-columns: subgrid 4fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: auto;
     grid-template-areas: 'header header' 'player0 scoreBar0';
     background-color: rgb(30,30,30);
-    align-items:space-between;
+    align-items:center;
   
 }
 .scoreBox{
@@ -25,12 +25,14 @@ body{
 .scoreBox p{
     background-color:   rgba(180,30,30,0.8);
     border:2px solid black;
+    max-height: fit-content;
     max-width: max-content;
     padding:3px;
     margin:2px
 }
 .strikes.strikes{
     grid-area:strikes;
+    font-size: 20%;
     background-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: red;
@@ -61,8 +63,7 @@ header{
     margin: 0px;
 }
 .scoreBar{
-    grid-area: scoreBar;
-    height:10px;
+    height:30px;
     width: 2px;
     background-color: brown;
 }
