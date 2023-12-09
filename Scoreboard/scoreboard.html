@@ -4,8 +4,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Dae's Scoreboard</title>
+        <meta name="description" content="A simple browser-based scoreboard app">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="scoreboard.css">
     </head>
@@ -17,6 +17,8 @@
         <div class="settings">
             <button type="button" id="settingButton" onClick="toggleSettings()">Settings</button>
             <span id="settingsWindow" hidden="true">
+            <label for="minScore">Min Score: </label>
+            <input type="number" id="minScore" value="0" class="setting">
             <label for="maxScore">Max Score: </label>
             <input type="number" id="maxScore" value="20" class="setting">
             <label for="maxStrikes">Max Strikes: </label>

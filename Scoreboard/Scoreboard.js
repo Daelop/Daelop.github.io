@@ -1,7 +1,7 @@
 let pCount = 0;
 let pStrikes = [];
 let pScore = [];
-let scoreMax = document.getElementById("maxScore").value;
+
 let areas = "'header header' 'player0 scoreBar0' ";
 let body = document.getElementById("grid");
 
@@ -49,7 +49,17 @@ function newPlayer(name) {
 
 //Modifies player scores
 function addScore(player, amount) {
+  let scoreMin = document.getElementById("minScore").value;
+  let scoreMax = document.getElementById("maxScore").value;
   pScore[player] += amount;
+  switch(true){
+    case pScore[player]<scoreMin:{
+      pScore[player]+=(scoreMin-pScore[player]);
+    } break;
+    case pScore[player]>scoreMax:{
+      pScore[player]+=(scoreMax-pScore[player]);
+    }break;
+  };
   document.getElementById("score" + player).innerHTML =
     "Score: " + pScore[player];
     let scoreLength = Math.floor(95*(pScore[player]/scoreMax))+'%';
