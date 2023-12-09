@@ -3,6 +3,7 @@ let pStrikes = [];
 let pScore = [];
 let scoreMax = document.getElementById("maxScore").value;
 let areas = "'header header' 'player0 scoreBar0' ";
+let body = document.getElementById("grid");
 
 function newPlayer(name) {
   let pID = "player" + pCount;
@@ -21,11 +22,10 @@ function newPlayer(name) {
     ">Score: 0</p><p class='strikes' id=strikes" +
     pCount +
     "></p>"
-  newPlayer.hidden = false;
+  //toggles score bar display on
   document.getElementById("scoreBar"+pCount).hidden=false
   //modifies the CSS grid to include the next score box and score bar
   areas += "'player"+(pCount+1)+" scoreBar"+(pCount+1)+"' "
-  let body = document.getElementById("grid");
   body.style.gridTemplateAreas = areas;
 
   //sets the class of the buttons to match the player index
@@ -106,4 +106,21 @@ function toggleSettings() {
   } else {
     document.getElementById("settingsWindow").hidden = true;
   }
+}
+function toggleRemove() {
+  if (document.getElementById("settingsWindow").hidden) {
+    document.getElementById("settingsWindow").hidden = false;
+    console.log("unhidden");
+  } else {
+    document.getElementById("settingsWindow").hidden = true;
+  }
+}
+function removePlayer(player){
+  let delP = document.getElementById("player"+player);
+  let delScore = document.getElementById("scoreBar"+player)
+  delP.remove();
+  delScore.remove();
+  areas = areas.replace("'player"+player+" scoreBar"+player+"' ","")
+  console.log(areas)
+  body.style.gridTemplateAreas = areas
 }
