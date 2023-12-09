@@ -52,6 +52,7 @@ function addScore(player, amount) {
   let scoreMin = document.getElementById("minScore").value;
   let scoreMax = document.getElementById("maxScore").value;
   pScore[player] += amount;
+  //Validates the new score against the min and max
   switch(true){
     case pScore[player]<scoreMin:{
       pScore[player]+=(scoreMin-pScore[player]);
@@ -118,6 +119,7 @@ function toggleSettings() {
   }
 }
 
+//Removes the target player
 function removePlayer(player){
   if (player==0){
     alert("Failed to remove original player. Sorry for the inconvenience.")
