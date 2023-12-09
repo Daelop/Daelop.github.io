@@ -14,7 +14,6 @@
             <label for="playerName">Player Name: </label>
             <input type="text" id="playerName" placeholder="New Player">
             <button type="button" onclick="newPlayer(document.getElementById('playerName').value)">Add Player</button>
-            <p><em>Dev note: Do NOT remove the first player. This function is currently bugged.</em> </p>
         <div class="settings">
             <button type="button" id="settingButton" onClick="toggleSettings()">Settings</button>
             <span id="settingsWindow" hidden="true">
@@ -26,7 +25,6 @@
            
         </div>
     </header>
-        
         <div id="player0" class="scoreBox" style="grid-area: player0;" hidden="true"></div>
         <div id="scoreBar0" class="scoreBar" style="grid-area:scoreBar0" hidden="true"></div>
         <section style="display: none;">

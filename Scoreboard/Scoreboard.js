@@ -107,15 +107,11 @@ function toggleSettings() {
     document.getElementById("settingsWindow").hidden = true;
   }
 }
-function toggleRemove() {
-  if (document.getElementById("settingsWindow").hidden) {
-    document.getElementById("settingsWindow").hidden = false;
-    console.log("unhidden");
-  } else {
-    document.getElementById("settingsWindow").hidden = true;
-  }
-}
+
 function removePlayer(player){
+  if (player==0){
+    alert("Failed to remove original player. Sorry for the inconvenience.")
+  } else{
   let delP = document.getElementById("player"+player);
   let delScore = document.getElementById("scoreBar"+player)
   delP.remove();
@@ -123,4 +119,4 @@ function removePlayer(player){
   areas = areas.replace("'player"+player+" scoreBar"+player+"' ","")
   console.log(areas)
   body.style.gridTemplateAreas = areas
-}
+}}
