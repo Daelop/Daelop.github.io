@@ -1,55 +1,122 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Dae's Scoreboard</title>
-        <meta name="description" content="A simple browser-based scoreboard app">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="scoreboard.css">
-        <link rel="icon" type="image/x-icon" href="..\DaeLogo.ico">
-    </head>
-    <body id="grid">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dae's Scoreboard</title>
+    <meta name="description" content="A simple browser-based scoreboard app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="scoreboard.css" />
+    <link rel="icon" type="image/x-icon" href="..\DaeLogo.ico" />
+  </head>
+  <body id="grid">
     <header>
-            <label for="playerName">Player Name: </label>
-            <input type="text" id="playerName" placeholder="New Player">
-            <button type="button" onclick="newPlayer(document.getElementById('playerName').value)">Add Player</button>
-        <div class="settings">
-            <button type="button" id="settingButton" onClick="toggleSettings()">Settings</button>
-            <span id="settingsWindow" hidden="true">
-            <label for="minScore">Min Score: </label>
-            <input type="number" id="minScore" value="0" class="setting">
-            <label for="maxScore">Max Score: </label>
-            <input type="number" id="maxScore" value="20" class="setting">
-            <label for="maxStrikes">Max Strikes: </label>
-            <input type="number" id="maxStrikes" value="3" min="0" class="setting">
-            </span>
-           
-        </div>
+      <label for="playerName">Player Name: </label>
+      <input type="text" id="playerName" placeholder="New Player" />
+      <button
+        type="button"
+        onclick="newPlayer(document.getElementById('playerName').value)"
+      >
+        Add Player
+      </button>
+      <div class="settings">
+        <button type="button" id="settingButton" onClick="toggleSettings()">
+          Settings
+        </button>
+        <span id="settingsWindow" hidden="true">
+          <label for="minScore">Min Score: </label>
+          <input type="number" id="minScore" value="0" class="setting" />
+          <label for="maxScore">Max Score: </label>
+          <input type="number" id="maxScore" value="20" class="setting" />
+          <label for="maxStrikes">Max Strikes: </label>
+          <input
+            type="number"
+            id="maxStrikes"
+            value="3"
+            min="0"
+            class="setting"
+          />
+        </span>
+      </div>
     </header>
-        <div id="player0" class="scoreBox" style="grid-area: player0;" hidden="true"></div>
-        <div id="scoreBar0" class="scoreBar" style="grid-area:scoreBar0" hidden="true"></div>
-        <section style="display: none;">
-        <div id="template" class="scoreControls">
+    <div
+      id="player0"
+      class="scoreBox"
+      style="grid-area: player0"
+      hidden="true"
+    ></div>
+    <div
+      id="scoreBar0"
+      class="scoreBar"
+      style="grid-area: scoreBar0"
+      hidden="true"
+    ></div>
+    <section style="display: none">
+      <div id="template" class="scoreControls">
         <div class="positiveScore">
-        <button class="score-button" onClick="addScore(this.getAttribute('class'),5)" >+5</button>
-        <button class="score-button" onClick="addScore(this.getAttribute('class'),2)" >+2</button>
-        <button class="score-button" onClick="addScore(this.getAttribute('class'),1)" >+1</button>
-       </div> 
-       <div class="negativeScore">
-       <button class="score-button" onClick="addScore(this.getAttribute('class'),-1)" >-1</button>
-        <button class="score-button" onClick="addScore(this.getAttribute('class'),-2)" >-2</button>
-        <button class="score-button" onClick="addScore(this.getAttribute('class'),-5)" >-5</button>
+          <button
+            class="score-button"
+            onClick="addScore(this.getAttribute('class'),5)"
+          >
+            +5
+          </button>
+          <button
+            class="score-button"
+            onClick="addScore(this.getAttribute('class'),2)"
+          >
+            +2
+          </button>
+          <button
+            class="score-button"
+            onClick="addScore(this.getAttribute('class'),1)"
+          >
+            +1
+          </button>
+        </div>
+        <div class="negativeScore">
+          <button
+            class="score-button"
+            onClick="addScore(this.getAttribute('class'),-1)"
+          >
+            -1
+          </button>
+          <button
+            class="score-button"
+            onClick="addScore(this.getAttribute('class'),-2)"
+          >
+            -2
+          </button>
+          <button
+            class="score-button"
+            onClick="addScore(this.getAttribute('class'),-5)"
+          >
+            -5
+          </button>
         </div>
         <div class="strike-buttons">
-        <button class="score-button" onClick="strike(this.getAttribute('class'),1)">Add Strike</button>
-        <button class="score-button" onClick="strike(this.getAttribute('class'),-1)">Remove Strike</button>
-        <button class="score-button" onclick="removePlayer(this.getAttribute('class'))" style="color:red; background-color: black;">Remove</button>
+          <button
+            class="score-button"
+            onClick="strike(this.getAttribute('class'),1)"
+          >
+            Add Strike
+          </button>
+          <button
+            class="score-button"
+            onClick="strike(this.getAttribute('class'),-1)"
+          >
+            Remove Strike
+          </button>
+          <button
+            class="score-button"
+            onclick="removePlayer(this.getAttribute('class'))"
+            style="color: red; background-color: black"
+          >
+            Remove
+          </button>
         </div>
-
-        </div>
-        </section>
-        <script src="/Scoreboard/Scoreboard.js" async defer></script>
-        </body>
+      </div>
+    </section>
+    <script src="/Scoreboard/Scoreboard.js" async defer></script>
+  </body>
 </html>
