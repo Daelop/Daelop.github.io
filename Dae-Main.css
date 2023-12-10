@@ -46,7 +46,7 @@ body{
 }
 a{
     color:inherit;
-    text-decoration: inherit;
+    text-decoration: underline;
 }
 
 .main-nav ul{
