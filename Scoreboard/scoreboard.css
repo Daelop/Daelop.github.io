@@ -11,7 +11,7 @@ body{
 .scoreBox{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
     grid-template-areas: 'name name name' 'pos pos pos' 'neg neg neg' 'strike strike strike' 'strikes strikes strikes';
     border-radius: 10px;
     border: 5px solid black;
@@ -19,11 +19,12 @@ body{
     background-color:   rgba(200,50,50,0.8);
     margin: 2px;
    width:150px;
-   max-height: 150px;
+   max-height: 175px;
    row-gap: 5px;
     
 }
 .scoreBox p{
+    font-family: monospace;
     background-color:   rgba(180,30,30,0.8);
     border:2px solid black;
     max-height: fit-content;
@@ -64,9 +65,10 @@ header{
 }
 .scoreBar{
     border-radius: 5px;
-    border: 2px solid black;
+    border: 5px solid black;
+    border-left:0px;
     height:30px;
     width: 0px;
     background-color:gold;
-    margin:10px;
+    margin:2px;
 }
