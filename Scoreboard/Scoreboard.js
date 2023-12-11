@@ -67,8 +67,21 @@ function addScore(player, amount) {
   }
   document.getElementById("score" + player).innerHTML =
     "Score: " + pScore[player];
-  let scoreLength = Math.floor(95 * (pScore[player] / scoreMax)) + "%";
-  document.getElementById("scoreBar" + player).style.width = scoreLength;
+  let scoreLength = Math.floor(95 * (pScore[player] / scoreMax));
+  let bar = document.getElementById("scoreBar" + player);
+  bar.style.width = scoreLength + "%";
+  let border = window.getComputedStyle(bar).borderRightWidth;
+  let barPxString = window.getComputedStyle(bar).width;
+  let barPXborder =
+    Number(barPxString.replace("px", "")) + Number(border.replace("px", ""));
+  let barPx = barPXborder / (pScore[player] / scoreMax);
+  let pattern =
+    "repeating-linear-gradient(90deg, gold, gold " +
+    (barPx / 10 - 2) +
+    "px, rgb(50, 50, 0),rgb(50, 50, 0)" +
+    barPx / 10 +
+    "px)";
+  bar.style.backgroundImage = pattern;
 }
 //Creates bars to represent player scores
 function playerBar(player) {
