@@ -12,6 +12,7 @@ function TokenGen(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
      const code = urlParams.get('code')
+     
    fetch('https://discord.com/api/oauth2/token',{
         method: 'POST',
         headers:{
@@ -25,9 +26,11 @@ function TokenGen(){
         }
     })
     .then ((response)=>response.json())
-    .then ((json)=> token = json)
+    .then ((json)=>{return json})
 }
+
 function getUser(){
+  
     fetch('https://discord.com/api/users/@me',{
         headers:{
             Authorization:`Bearer ${token}`
@@ -38,7 +41,7 @@ function getUser(){
  .then ((response)=>response.json())
  .then ((json)=>console.log(json))
 }
-function printAuth(){
-    TokenGen();
-    getUser()
+async function printAuth(){
+    token = await TokenGen()
+    setTimeout(()=>{getUser()},100)
 }
