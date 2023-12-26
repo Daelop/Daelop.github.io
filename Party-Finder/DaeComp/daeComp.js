@@ -17,10 +17,10 @@ function TokenGen(){
    fetch('https://discord.com/api/oauth2/token',{
         method: 'POST',
         headers:{
-            'content-type':'x-www-form-urlencoded'
+            'content-type':'application/x-www-form-urlencoded'
         },
         body:{
-            client_id:'1188079942777438298',
+            client_id:"1188079942777438298",
             client_secret:"4AKGB8vd5qjOiiB1VfsHD7WjglWX3NWL",
             grant_type:"authorization_code",
             code: code
