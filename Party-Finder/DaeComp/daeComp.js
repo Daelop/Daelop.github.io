@@ -12,7 +12,7 @@ function TokenGen(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
      const code = urlParams.get('code')
-     
+   //theres a problem here i think fix plz :)  
    fetch('https://discord.com/api/oauth2/token',{
         method: 'POST',
         headers:{
@@ -26,7 +26,7 @@ function TokenGen(){
         }
     })
     .then ((response)=>response.json())
-    .then ((json)=>{return json})
+    .then ((json)=>console.log(json))
 }
 
 function getUser(){
@@ -42,6 +42,6 @@ function getUser(){
  .then ((json)=>console.log(json))
 }
 async function printAuth(){
-    token = await TokenGen()
+    token = TokenGen()
     setTimeout(()=>{getUser()},100)
 }
