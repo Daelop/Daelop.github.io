@@ -1,4 +1,5 @@
 let token={}
+let code = ''
 function auth(){fetch('https://discord.com/api/v10/users/@me')
 .then((response)=>response.json())
 .then((json)=>console.log(json));}
@@ -7,7 +8,7 @@ function test(){
 }
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const code = urlParams.get('code')
+code = urlParams.get('code')
 function TokenGen(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
