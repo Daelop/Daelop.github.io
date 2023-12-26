@@ -58,17 +58,27 @@ Pre-event management features are accessible anytime from the creation of the ev
 
 #### 2.3b: Live Management
 
-Live management features are available once the event has commenced
+Live management features are available once the event has commenced.
+- Judging
+- Audience event commencement (voting, giveaways, etc)
+- Initialising score tallying
+- Advancing run sheet
+- Editing run sheet
 
 ### 2.4: Participant Features
 
-
+Participants will be able to provide information about their entry to organizers. The scope of information that can be submitted will depend on settings, but may include:
+- Image(s) of the entry.
+- A description of the entry.
+- A name for their entry.
 
 ### 2.5: Audience Features
 
-
+Audience members will only be able to view certain information (determined by organizers) and interact with the event through voting and/or giveaways.
 
 ## Part 3: API's and Data Management
+
+API usage is currently TBC, pending better understanding of usability.
 
 ### 3.1: XIVAPI
 
@@ -90,11 +100,11 @@ Live management features are available once the event has commenced
 
 ### 4.1: Support for Other Games
 
-
+DaeComp will be built to eventually host events from a diverse range or different games. Currently, the app is planned specifically for FFXIV as it provides a usable MVP (minimum viable product) with which to test it.
 
 ### 4.2: Party Finder
 
-
+DaeComp is intended to be a part of a larger project called 'Party Finder' this project will provide a platform to list, find, and join community events from a number of popular games.
 
 ## Part 5: Glossary
 
