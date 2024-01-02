@@ -16,7 +16,7 @@ function submitApp(){
     const discord = 'PLACEHOLDER'
     const consent = document.getElementById('discordConsent').value
     const tos = document.getElementById('TOS').value
-    fetch ("/users/users.json",{
+    fetch ("https://daelop.github.io/Party-Finder/DaeComp/Events/Test_Event/users/users.json",{
         method: "POST",
         body: JSON.stringify(new application(discord, IGN, server, consent, tos))
     }
