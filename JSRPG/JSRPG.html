@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="JSRPG.css" />
+  </head>
+  <body>
+    <section id="pCreate">
+      <p>Please create four characters for your party!</p>
+      <p id="charNum">Character 1</p>
+      <input type="text" name="PlayerName" id="PlayerName" />
+      <select name="job" id="job">
+        <option value="knight">Knight</option>
+        <option value="swordsman">Swordsman</option>
+        <option value="ranger">Ranger</option>
+        <option value="mage">Mage</option>
+        <option value="healer">Healer</option>
+      </select>
+
+      <button
+        type="button"
+        onclick="newCharacter(document.getElementById('PlayerName').value, document.getElementById('job').value)"
+      >
+        Create Character
+      </button>
+    </section>
+    <section id="sheets" hidden="true">
+
+      <div id="charSheet0" class="charSheet">
+        <p id="nameJob0" class="nameJob"></p>
+        <button type="button" onclick="toggleStats(0)">Stats</button>
+        <span id="stats0" class="stats" hidden="true"> </span>
+      </div>
+
+      <div id="charSheet1" class="charSheet">
+        <p id="nameJob1" class="nameJob"></p>
+        <button type="button" onclick="toggleStats(1)">Stats</button>
+        <span id="stats1" class="stats" hidden="true"> </span>
+      </div>
+
+      <div id="charSheet2" class="charSheet">
+        <p id="nameJob2" class="nameJob"></p>
+        <button type="button" onclick="toggleStats(2)">Stats</button>
+        <span id="stats2" class="stats" hidden="true"> </span>
+      </div>
+
+      <div id="charSheet3" class="charSheet">
+        <p id="nameJob3" class="nameJob"></p>
+        <button type="button" onclick="toggleStats(3)">Stats</button>
+        <span id="stats3" class="stats" hidden="true"> </span>
+      </div>
+      
+    </section>
+    <script src="JSRPG.js" async defer></script>
+  </body>
+</html>

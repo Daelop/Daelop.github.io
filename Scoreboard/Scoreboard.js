@@ -70,6 +70,7 @@ function addScore(player, amount) {
   let scoreLength = Math.floor(95 * (pScore[player] / scoreMax));
   let bar = document.getElementById("scoreBar" + player);
   bar.style.width = scoreLength + "%";
+  //Segments the score bar into tenths
   let border = window.getComputedStyle(bar).borderRightWidth;
   let barPxString = window.getComputedStyle(bar).width;
   let barPXborder =

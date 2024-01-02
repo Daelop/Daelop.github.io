@@ -95,6 +95,30 @@ API usage is currently TBC, pending better understanding of usability.
 ### 3.4: User Data
 
 
+### 3.5: Data Structure
+
+Below is a flowchart showing an example data structure for an event named 'Event A'. Square boxes indicate folders, while rounded boxes indicate files.
+```mermaid
+graph TD
+  A[Events]-->B[Event_A]
+  B-->C(Event_A.JSON)
+  B-->D[Users]
+  D-->E[User_A]
+  D-->F[User_B]
+  D-->G[User_C]
+  E-->H(User_A.JSON)
+  E-->I(User_A.PNG)
+  F-->J(User_B.JSON)
+  F-->K(User_B.PNG)
+  G-->L(User_C.JSON)
+  G-->M(User_C.PNG)
+  B-->N[Images]
+  N-->O(Event_A_Header.PNG)
+  N-->P(Event_A_Logo.PNG)
+
+```
+
+
 
 ## Part 4: Future Plans
 
