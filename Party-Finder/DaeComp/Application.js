@@ -1,7 +1,8 @@
-const fs = require('fs')
 
 
-function submitApp(){
+
+
+async function submitApp(){
     const application = {
     'IGN': document.getElementById('pName').value,
     'server': document.getElementById('pServerOCE').value,
@@ -9,15 +10,13 @@ function submitApp(){
     'consent' : document.getElementById('discordConsent').value,
     'tos' : document.getElementById('TOS').value
 }
-    const filePath= `/Users/Applicants/${application.discord}.JSON`
-    const applicant = JSON.stringify(application)
-    fs.writeFile(filePath,applicant, err => {
-        if (err) {
-            console.log('Error writing file', err)
-        } else {
-            console.log('Successfully wrote file')
-        }
-    });
 
+const response = await fetch("https://tkh1d7xsf5.execute-api.ap-southeast-2.amazonaws.com/dev/items",{
+  method: "POST",
+  body: {
+    message:JSON.stringify(application)
+  }
+})
 
-}
+  }
+  
