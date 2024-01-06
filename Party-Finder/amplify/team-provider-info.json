@@ -1,0 +1,34 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-partyfinder-dev-123935-authRole",
+      "UnauthRoleArn": "arn:aws:iam::891377123969:role/amplify-partyfinder-dev-123935-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::891377123969:role/amplify-partyfinder-dev-123935-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-partyfinder-dev-123935-deployment",
+      "UnauthRoleName": "amplify-partyfinder-dev-123935-unauthRole",
+      "StackName": "amplify-partyfinder-dev-123935",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:891377123969:stack/amplify-partyfinder-dev-123935/b14f4860-ac23-11ee-a827-063c918dc0f3",
+      "AmplifyAppId": "d3shh68yv04qn0",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-partyfinder-dev-123935-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "partyfinder": {}
+      },
+      "function": {
+        "DaeLambda": {
+          "deploymentBucketName": "amplify-partyfinder-dev-123935-deployment",
+          "s3Key": "amplify-builds/DaeLambda-7833644745476a723454-build.zip"
+        },
+        "partyfinder5200e5ba": {
+          "deploymentBucketName": "amplify-partyfinder-dev-123935-deployment",
+          "s3Key": "amplify-builds/partyfinder5200e5ba-4356634b4e536e2b6d76-build.zip"
+        }
+      },
+      "api": {
+        "DaeApi": {}
+      }
+    }
+  }
+}
